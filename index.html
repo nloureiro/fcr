@@ -364,81 +364,81 @@
           <div class="lg:w-2/3 space-y-3">
             <details class="group border-b border-text-muted/20 pb-3">
               <summary class="flex items-center justify-between py-2 cursor-pointer">
-                <span class="text-text font-medium text-sm md:text-base">What is the Fast Confirmation Rule?</span>
+                <span class="text-text font-medium text-sm md:text-base">What is the Fast Confirmation Rule (FCR)?</span>
                 <span class="faq-icon text-primary text-xl font-light">+</span>
               </summary>
               <div class="pt-2 text-text-muted text-sm leading-relaxed">
-                FCR provides faster confirmation by analyzing real-time attestation weight, allowing applications to consider blocks confirmed in ~13 seconds instead of waiting for full finality.
+                FCR is an algorithm that provides near-instant transaction confirmations by analyzing validator attestation voting power in real-time. It determines that a block is secure based on deterministic logic, not probability; based on the weight of LMD-GHOST support it has gathered from the validator committee, if a transaction is fast confirmed, it is guaranteed to be finalized provided that standard network synchrony and adversarial threshold assumptions hold. Effectively, a fast-confirmed transaction will be finalized unless the network experiences exceptional circumstances.
               </div>
             </details>
 
             <details class="group border-b border-text-muted/20 pb-3">
               <summary class="flex items-center justify-between py-2 cursor-pointer">
-                <span class="text-text font-medium text-sm md:text-base">Does FCR require a hard fork?</span>
+                <span class="text-text font-medium text-sm md:text-base">Is a hard fork required to implement FCR?</span>
                 <span class="faq-icon text-primary text-xl font-light">+</span>
               </summary>
               <div class="pt-2 text-text-muted text-sm leading-relaxed">
-                No. FCR is implemented entirely at the client level and requires no protocol changes or hard forks.
+                No. FCR is an out-of-protocol, opt-in upgrade for consensus clients. It requires no changes to the base Ethereum consensus layer, no hard fork, and no network-wide coordination; node operators can operate it independently.
               </div>
             </details>
 
             <details class="group border-b border-text-muted/20 pb-3">
               <summary class="flex items-center justify-between py-2 cursor-pointer">
-                <span class="text-text font-medium text-sm md:text-base">How fast is FCR compared to FFG finality?</span>
+                <span class="text-text font-medium text-sm md:text-base">Is FCR as secure as full finality?</span>
                 <span class="faq-icon text-primary text-xl font-light">+</span>
               </summary>
               <div class="pt-2 text-text-muted text-sm leading-relaxed">
-                FCR provides confirmation in ~12-13 seconds (1-2 slots), compared to FFG finality which takes ~12-18 minutes (2 epochs).
+                FCR operates on a different security assumption than Casper FFG finality. While full finality requires a 33% adversarial threshold and works under partial network synchrony, FCR typically assumes a 20–30% adversarial threshold and requires network synchrony (attestations arriving within ~8 seconds). It is a complementary tool meant for speed, while FFG finalization remains the ultimate economic security guarantee.
               </div>
             </details>
 
             <details class="group border-b border-text-muted/20 pb-3">
               <summary class="flex items-center justify-between py-2 cursor-pointer">
-                <span class="text-text font-medium text-sm md:text-base">What are the security tradeoffs?</span>
+                <span class="text-text font-medium text-sm md:text-base">What happens if network conditions are poor?</span>
                 <span class="faq-icon text-primary text-xl font-light">+</span>
               </summary>
               <div class="pt-2 text-text-muted text-sm leading-relaxed">
-                FCR relies on network synchrony and a 20-30% adversarial threshold, while FFG provides absolute finality with a 33% threshold. FCR is suitable for most everyday transactions.
+                The rule is designed with an automatic fallback mechanism. If support indicators (Q and P) fall below the required safety thresholds—due to high latency, missed slots, or low validator participation—the system simply reverts to standard protocol finality timing without compromising safety.
               </div>
             </details>
 
             <details class="group border-b border-text-muted/20 pb-3">
               <summary class="flex items-center justify-between py-2 cursor-pointer">
-                <span class="text-text font-medium text-sm md:text-base">What happens during network issues?</span>
+                <span class="text-text font-medium text-sm md:text-base">How much faster is FCR than the current system?</span>
                 <span class="faq-icon text-primary text-xl font-light">+</span>
               </summary>
               <div class="pt-2 text-text-muted text-sm leading-relaxed">
-                Applications should monitor network conditions and fall back to FFG finality during periods of instability or for high-value transactions.
+                FCR reduces confirmation times from the current 12–16 minutes (64 blocks) to approximately 12–24 seconds (1–2 slots). This represents a 98.75% improvement in confirmation latency.
               </div>
             </details>
 
             <details class="group border-b border-text-muted/20 pb-3">
               <summary class="flex items-center justify-between py-2 cursor-pointer">
-                <span class="text-text font-medium text-sm md:text-base">Which consensus clients support FCR?</span>
+                <span class="text-text font-medium text-sm md:text-base">Which clients support FCR?</span>
                 <span class="faq-icon text-primary text-xl font-light">+</span>
               </summary>
               <div class="pt-2 text-text-muted text-sm leading-relaxed">
-                Support is being added to major clients including Lighthouse, Prysm, and Teku. Check the documentation for the latest compatibility.
+                Standardized specifications are being integrated into the Ethereum consensus specs (PR #4747). Support is actively being developed and implemented in major consensus clients, including Lighthouse, Prysm, and Teku.
               </div>
             </details>
 
             <details class="group border-b border-text-muted/20 pb-3">
               <summary class="flex items-center justify-between py-2 cursor-pointer">
-                <span class="text-text font-medium text-sm md:text-base">How do I implement FCR?</span>
+                <span class="text-text font-medium text-sm md:text-base">Does FCR affect rollup and L2 security?</span>
                 <span class="faq-icon text-primary text-xl font-light">+</span>
               </summary>
               <div class="pt-2 text-text-muted text-sm leading-relaxed">
-                Enable the flag on your consensus client, query the new Beacon API endpoint, and update your confirmation logic to use FCR status alongside FFG.
+                It depends on the L2's implementation choice. If an L2 opts to use FCR for faster settlement signals, its security for those specific states relies on FCR's network assumptions (synchrony and adversarial thresholds). If an L2 ignores FCR and continues to wait for standard full finality, its security model remains completely unchanged.
               </div>
             </details>
 
             <details class="group border-b border-text-muted/20 pb-3">
               <summary class="flex items-center justify-between py-2 cursor-pointer">
-                <span class="text-text font-medium text-sm md:text-base">Should I use FCR for all transactions?</span>
+                <span class="text-text font-medium text-sm md:text-base">Can an adversary intentionally delay my confirmation?</span>
                 <span class="faq-icon text-primary text-xl font-light">+</span>
               </summary>
               <div class="pt-2 text-text-muted text-sm leading-relaxed">
-                FCR is ideal for small to medium transactions. For large or high-value transactions, wait for full FFG finality.
+                FCR is designed to be robust against manipulation. While adversaries may attempt to influence timing, successfully preventing or reverting a fast confirmation would require controlling a significant portion of the validator set (exceeding the 20-30% adversarial threshold). As long as the network remains below this threshold, FCR remains secure.
               </div>
             </details>
           </div>
