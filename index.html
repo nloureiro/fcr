@@ -14,7 +14,7 @@
         <div class="flex items-center justify-between bg-background px-6 md:px-12 lg:px-16 py-4 rounded-t-2xl md:rounded-t-[30px] border-b-2 border-transparent transition-all duration-300" id="header-inner">
           <div class="flex flex-col">
             <span class="text-primary text-3xl md:text-4xl font-bold tracking-tight">FCR</span>
-            <span id="header-subtitle" class="text-primary text-[10px] md:text-xs leading-tight transition-all duration-300">Fast<br>Confirmation<br>Rule</span>
+            <span id="header-subtitle" class="text-primary text-xs md:text-sm font-medium transition-all duration-300">Fast Confirmation Rule</span>
           </div>
           <nav id="header-nav" class="hidden lg:flex items-center gap-10 transition-all duration-300">
             <a href="#overview" class="nav-link text-sm font-medium tracking-wide">OVERVIEW</a>
@@ -57,14 +57,14 @@
         <div class="text-center space-y-6">
           <h2 class="text-primary text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight max-w-4xl mx-auto">
             Confirmation in 13 seconds.<br>
-            Single-slot confirmation for ethereum.
+            Single slot confirmation for Ethereum.
           </h2>
           <div class="flex justify-center gap-4 md:gap-7">
             <a href="#implement" class="bg-primary text-background text-sm md:text-base font-medium px-6 md:px-8 py-3 md:py-4 rounded-full hover:bg-primary-dark transition-colors">
               Get Started
             </a>
             <a href="#use-cases" class="border-2 border-primary text-primary text-sm md:text-base font-medium px-6 md:px-8 py-3 md:py-4 rounded-full hover:bg-primary hover:text-background transition-colors">
-              Use cases
+              Use Cases
             </a>
           </div>
         </div>
@@ -74,18 +74,17 @@
       <section class="space-y-8">
         <div class="flex flex-col lg:flex-row gap-8 lg:gap-16">
           <h3 class="text-primary text-2xl md:text-3xl lg:text-4xl font-extrabold leading-tight lg:w-1/4 lg:shrink-0">
-            Fast for users.<br>
-            High-degree assurance.
+            Fast and Secure confirmations for users.
           </h3>
           <div class="lg:flex-1 grid md:grid-cols-3 gap-6 lg:gap-8">
             <p class="text-text-muted text-sm md:text-base leading-relaxed">
-              Liquidity is held hostage by the finality clock. <span class="text-primary font-semibold">FCR unblocks fund rebalancing</span> and eliminates trader anxiety.
+              <span class="text-primary font-semibold">FCR reduces L1 to L2 or L1 to exchange deposit and message speed to about 13 seconds.</span> That is 98.75% faster than finality.
             </p>
             <p class="text-text-muted text-sm md:text-base leading-relaxed">
-              Instead of waiting for block confirmations, <span class="text-primary font-semibold">FCR analyzes validator attestations in real-time</span> for results in just seconds.
+              <span class="text-primary font-semibold">FCR relies on counting attestations</span> and is proven to be safe under normal network conditions. Waiting for a number of blocks is not.
             </p>
             <p class="text-text-muted text-sm md:text-base leading-relaxed">
-              <span class="text-primary font-semibold">Security first.</span> If confidence drops below threshold, FCR automatically falls back to standard finality.
+              <span class="text-primary font-semibold">Security first.</span> If confidence drops below threshold, FCR automatically falls back to finality.
             </p>
           </div>
         </div>
@@ -95,7 +94,7 @@
       <section id="risk" class="space-y-8">
         <h3 class="text-primary text-3xl md:text-4xl lg:text-5xl font-extrabold">Trade-offs</h3>
         <p class="text-text-muted text-sm md:text-base max-w-3xl">
-          FCR optimizes for user speed, while respected finality provides estimate economic security.
+          FCR optimizes for speed; finality optimizes for extreme robustness.
         </p>
 
         <div class="grid md:grid-cols-2 gap-6 md:gap-8">
@@ -106,11 +105,11 @@
             <div class="space-y-5">
               <div>
                 <div class="text-primary font-bold text-xl md:text-2xl">Speed</div>
-                <div class="text-text-muted text-sm">~12-13 seconds (1-2 slots)</div>
+                <div class="text-text-muted text-sm">~12-13 seconds</div>
               </div>
               <div>
                 <div class="text-primary font-bold text-xl md:text-2xl">Synchronous security</div>
-                <div class="text-text-muted text-sm">Relies on network synchrony (~8s) and a 20-30% adversarial threshold</div>
+                <div class="text-text-muted text-sm">Relies on network synchrony and a 25% adversarial threshold</div>
               </div>
               <div>
                 <div class="text-primary font-bold text-xl md:text-2xl">High confidence guarantee</div>
@@ -118,7 +117,7 @@
               </div>
               <div>
                 <div class="text-primary font-bold text-xl md:text-2xl">Reliable speed</div>
-                <div class="text-text-muted text-sm">Best suited for everyday payments, DeFi interactions, and L2 availability</div>
+                <div class="text-text-muted text-sm">Best suited for L2 native and external bridges and exchange deposits.</div>
               </div>
             </div>
           </div>
@@ -163,15 +162,11 @@
             <ul class="text-text-muted text-sm space-y-4">
               <li class="flex items-start gap-3">
                 <span class="text-text mt-0.5">■</span>
-                <span>Eliminate "Where is my deposit?" tickets. Credit deposits in seconds and increase trading velocity.</span>
+                <span>Don't leave your users worrying. Credit deposits within seconds.</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-text mt-0.5">■</span>
-                <span>Capture time-sensitive liquidity. Enable single-slot trading to secure arbitrage volume and active flows.</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="text-text mt-0.5">■</span>
-                <span>Deepen order book liquidity. Minimize the time assets are idle in 'confirming' states, tightening spreads and improving execution quality.</span>
+                <span>Deepen order book liquidity. Minimize time assets are idle while waiting to be confirmed.</span>
               </li>
             </ul>
           </div>
@@ -185,65 +180,35 @@
             <ul class="text-text-muted text-sm space-y-4">
               <li class="flex items-start gap-3">
                 <span class="text-text mt-0.5">■</span>
-                <span>Stop holding liquidity hostage. Release funds on the destination chain in one slot (~12-13s).</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="text-text mt-0.5">■</span>
-                <span>Safely compete with centralized bridges on speed, using real-time validator attestations.</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="text-text mt-0.5">■</span>
-                <span>Reduce operational costs associated with long-term capital lockups during finality waits.</span>
+                <span>Reduce costs. Under normal network conditions, reorgs are no concern with FCR.</span>
               </li>
             </ul>
           </div>
 
-          <!-- Layer 2s & Rollups -->
+          <!-- L2s -->
           <div class="rounded-3xl p-6 md:p-8 space-y-4 border-2 border-primary/40">
             <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-text-muted/30 flex items-center justify-center">
               <span class="text-primary text-xs">icons???</span>
             </div>
-            <h4 class="text-primary text-xl md:text-2xl font-bold">Layer 2s & Rollups</h4>
+            <h4 class="text-primary text-xl md:text-2xl font-bold">L2s</h4>
             <ul class="text-text-muted text-sm space-y-4">
               <li class="flex items-start gap-3">
                 <span class="text-text mt-0.5">■</span>
-                <span>Faster L1 state finalization means improved rollup performance and faster withdrawals for users.</span>
+                <span>Don't let your users wait! Confirm deposits from the L1 within seconds</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-text mt-0.5">■</span>
-                <span>Improve rollup settlement speed without any changes to your existing L2 protocol.</span>
+                <span>Tap into Ethereum's liquidity within seconds</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-text mt-0.5">■</span>
-                <span>Verify L1 data availability in seconds, shortening the window for fraud or validity proof finality.</span>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Wallets & Consumer Apps -->
-          <div class="rounded-3xl p-6 md:p-8 space-y-4 border-2 border-primary/40">
-            <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-text-muted/30 flex items-center justify-center">
-              <span class="text-primary text-xs">icons???</span>
-            </div>
-            <h4 class="text-primary text-xl md:text-2xl font-bold">Wallets & Consumer Apps</h4>
-            <ul class="text-text-muted text-sm space-y-4">
-              <li class="flex items-start gap-3">
-                <span class="text-text mt-0.5">■</span>
-                <span>Show users "Confirmed" in ~12 seconds. Match the expectations of modern consumer payment apps.</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="text-text mt-0.5">■</span>
-                <span>Eliminate the anxiety of the "Pending" spinner. Instant feedback builds user confidence and trust.</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="text-text mt-0.5">■</span>
-                <span>Enable faster interaction loops for DeFi and NFT mints with near-instant L1 confirmation signals.</span>
+                <span>Automatically fall back to a safe head block if there are too few attestations</span>
               </li>
             </ul>
           </div>
 
           <!-- RPC & Infrastructure Providers -->
-          <div class="md:col-span-2 rounded-3xl p-6 md:p-8 space-y-4 border-2 border-primary/40">
+          <div class="rounded-3xl p-6 md:p-8 space-y-4 border-2 border-primary/40">
             <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-text-muted/30 flex items-center justify-center">
               <span class="text-primary text-xs">icons???</span>
             </div>
@@ -251,7 +216,7 @@
             <ul class="text-text-muted text-sm space-y-4">
               <li class="flex items-start gap-3">
                 <span class="text-text mt-0.5">■</span>
-                <span>Differentiate your API suite. Provide 'Fast Confirmation' endpoints that let developers bypass the 12-minute wait for full economic security.</span>
+                <span>Differentiate your API suite. Provide 'Fast Confirmation' endpoints that let developers bypass the 12 minute wait for finality.</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-text mt-0.5">■</span>
@@ -262,33 +227,6 @@
                 <span>Standardize transaction confidence. Replace fragmented custom estimations with a unified, protocol-aligned confirmation signal for your users.</span>
               </li>
             </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- Transaction Recommendations -->
-      <section class="bg-primary text-background rounded-3xl p-8 md:p-12">
-        <div class="grid md:grid-cols-3 gap-8 md:gap-12">
-          <div class="space-y-5">
-            <div class="h-12 flex items-end">
-              <div class="w-4 h-4 bg-background rounded-full"></div>
-            </div>
-            <div class="text-base font-bold uppercase tracking-wider">Small<br>Transactions</div>
-            <div class="text-base">Use <span class="font-bold">FCR</span> for fast confirmation</div>
-          </div>
-          <div class="space-y-5">
-            <div class="h-12 flex items-end">
-              <div class="w-8 h-8 bg-background rounded-full"></div>
-            </div>
-            <div class="text-base font-bold uppercase tracking-wider">Medium<br>Transactions</div>
-            <div class="text-base">Use <span class="font-bold">FCR</span> with monitoring</div>
-          </div>
-          <div class="space-y-5">
-            <div class="h-12 flex items-end">
-              <div class="w-12 h-12 bg-background rounded-full"></div>
-            </div>
-            <div class="text-base font-bold uppercase tracking-wider">Large<br>Transactions</div>
-            <div class="text-base">Wait for full <span class="font-bold">FFG</span> finality</div>
           </div>
         </div>
       </section>
@@ -340,7 +278,7 @@
               <div class="space-y-4">
                 <div class="text-primary text-sm font-medium tracking-wider">STEP 03</div>
                 <h4 class="text-primary text-2xl md:text-3xl font-bold">Verify</h4>
-                <p class="text-text-muted text-sm md:text-base">Modify your confirmation logic to use FCR status alongside FFG.</p>
+                <p class="text-text-muted text-sm md:text-base">Modify your confirmation logic to use FCR.</p>
               </div>
               <div class="bg-text rounded-sm p-5 md:p-6 space-y-3">
                 <div class="text-background/60 text-xs uppercase tracking-wider">Response</div>
@@ -357,7 +295,7 @@
           <div class="lg:w-1/3">
             <h3 class="text-primary text-3xl md:text-4xl font-bold">Frequently asked</h3>
             <p class="text-text-muted text-sm md:text-base mt-4 hidden lg:block">
-              FCR provides faster confirmation by optimizing for user speed, while respected finality provides estimate economic security-alternative security considerations for different transaction thresholds.
+              The Fast Confirmation Rule provides secure confirmations within 13 seconds. Although the exact algorithm is complex, the core idea relies on counting attestations. Using FCR is very easy! Feel free to get in touch by emailing fastconfirm@ethereum.org
             </p>
           </div>
 
@@ -384,11 +322,11 @@
 
             <details class="group border-b border-text-muted/20 pb-3">
               <summary class="flex items-center justify-between py-2 cursor-pointer">
-                <span class="text-text font-medium text-sm md:text-base">Is FCR as secure as full finality?</span>
+                <span class="text-text font-medium text-sm md:text-base">Is FCR as secure as finality?</span>
                 <span class="faq-icon text-primary text-xl font-light">+</span>
               </summary>
               <div class="pt-2 text-text-muted text-sm leading-relaxed">
-                FCR operates on a different security assumption than Casper FFG finality. While full finality requires a 33% adversarial threshold and works under partial network synchrony, FCR typically assumes a 20–30% adversarial threshold and requires network synchrony (attestations arriving within ~8 seconds). It is a complementary tool meant for speed, while FFG finalization remains the ultimate economic security guarantee.
+                FCR operates on a different security assumption than Casper FFG finality. While finality requires a 33% adversarial threshold and works under partial network synchrony, FCR assumes a 25% adversarial threshold and requires network synchrony. It is a complementary tool meant for speed, while FFG finalization remains the ultimate economic security guarantee.
               </div>
             </details>
 
@@ -408,7 +346,7 @@
                 <span class="faq-icon text-primary text-xl font-light">+</span>
               </summary>
               <div class="pt-2 text-text-muted text-sm leading-relaxed">
-                FCR reduces confirmation times from the current 12–16 minutes (64 blocks) to approximately 12–24 seconds (1–2 slots). This represents a 98.75% improvement in confirmation latency.
+                FCR reduces confirmation times from the current 12–16 minutes (64 blocks) to approximately 13 seconds. This represents a 98.75% improvement in confirmation latency.
               </div>
             </details>
 
@@ -428,7 +366,7 @@
                 <span class="faq-icon text-primary text-xl font-light">+</span>
               </summary>
               <div class="pt-2 text-text-muted text-sm leading-relaxed">
-                It depends on the L2's implementation choice. If an L2 opts to use FCR for faster settlement signals, its security for those specific states relies on FCR's network assumptions (synchrony and adversarial thresholds). If an L2 ignores FCR and continues to wait for standard full finality, its security model remains completely unchanged.
+                L2s that use FCR will never finalize an invalid block. The worst case is that the L2 would need to reorg with the L1 in the exceptional case there is an adversary with more than 25% stake.
               </div>
             </details>
 
@@ -438,7 +376,7 @@
                 <span class="faq-icon text-primary text-xl font-light">+</span>
               </summary>
               <div class="pt-2 text-text-muted text-sm leading-relaxed">
-                FCR is designed to be robust against manipulation. While adversaries may attempt to influence timing, successfully preventing or reverting a fast confirmation would require controlling a significant portion of the validator set (exceeding the 20-30% adversarial threshold). As long as the network remains below this threshold, FCR remains secure.
+                FCR is designed to be robust against manipulation. While adversaries may attempt to influence timing, successfully preventing or reverting a fast confirmation would require controlling a significant portion of the validator set (exceeding the 25% adversarial threshold). As long as the network remains below this threshold, FCR remains secure.
               </div>
             </details>
           </div>
@@ -452,7 +390,7 @@
           Read Documentation
         </a>
         <p class="text-background text-sm md:text-base">
-          High value. Low lift. Start using Fast Confirmation Rule today.
+          Get in touch via fastconfirm@ethereum.org for questions
         </p>
       </section>
 
@@ -462,7 +400,7 @@
           <div class="flex items-center gap-8">
             <div class="flex flex-col">
               <span class="text-primary text-2xl font-bold tracking-tight">FCR</span>
-              <span class="text-primary text-[8px] leading-tight">Fast<br>Confirmation<br>Rule</span>
+              <span class="text-primary text-[10px] md:text-xs font-medium">Fast Confirmation Rule</span>
             </div>
             <svg class="h-8" viewBox="0 0 151 37" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M10.7405 27.8042V36.6871L0 20.9375L10.7405 27.8042Z" fill="#0DAFD2"/>
